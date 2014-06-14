@@ -5,11 +5,58 @@
         <script>
         
             //funcion
+          function saludar(nombre){
+          	//alert("hola "+nombre);
+          	return 0;
+          }
             
-            //funcion anonima
+            //lamar la funcion
+           var numero= saludar("Isaac");
+            //funcion anonima o lamdas
+            var c=0;
+            
+            var sumar= function(a, b){
+            	var c =a+b;
+            	return c;
+            };
+          
+           
+            
+            
+            var multiplicar = function(a,b){
+            	var c =a*b;
+            	return c;
+            };
+             var suma= sumar(2, 5);
+              var multiplicacion= multiplicar(2, 5);
+              
+              document.write("<H2>el valor de c: "+c+"</h2>");
+              document.write("<H2>Suma: "+suma+"</h2>");
+              document.write("<H2>multiplicacion: "+multiplicacion+"</h2>");
             
             //una funcion como argumento
-            //sepuede definir ahi mismo
+            //sepuede definir ahi mismo una funacion dentro de una funcon(closures)
+            
+            var operacion = function(unaFuncion){
+            	var resultado=unaFuncion(3,4);
+            	alert("El resultado es: "+resultado);
+            };
+            
+            operacion(multiplicar);
+            
+            operacion(function(a,b){
+            	var c= a-b;
+            	return c;
+            });
+            //closures - autoejecutables
+            (function(){
+            	var function1= function(){
+            		document.write("Soy una funcion 1");
+            	};
+            	var dato = 5;
+            	function1();
+            })();
+            
 
         </script>
     </head>
